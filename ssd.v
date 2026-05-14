@@ -30,13 +30,12 @@ reg [3:0] digit;
 wire [3:0] ones;
 wire [3:0] tens;
 wire [3:0] hundreds;
-assign hundreds=number/100;
+assign hundreds=number/100; //value to be displayed in each anode
 assign ones=number % 10;
 assign tens=(number/10) % 10;
 
 
-
-always @(posedge clk) begin
+    always @(posedge clk) begin   //multiplexing between the anodes
 
     counter<=counter + 1;
 
